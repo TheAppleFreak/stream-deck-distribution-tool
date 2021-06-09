@@ -1,2 +1,57 @@
 # stream-deck-distribution-tool
-A small tool to download and set up the Elgato Stream Deck Distribution Tool automatically. 
+
+![Continuous Integration](https://github.com/TheAppleFreak/stream-deck-distribution-tool/actions/workflows/tests.yml/badge.svg) [![npm version](https://badge.fury.io/js/stream-deck-distribution-tool.svg)](https://www.npmjs.com/package/stream-deck-distribution-tool)
+
+Binary wrapper that makes the Elgato Stream Deck Distribution Tool seamlessly available as a local dependency.
+
+## Install 
+
+```
+npm install -D stream-deck-distribution-tool
+```
+
+Upon installation, this package will download the latest version of the distribution tool from [the Elgato Stream Deck API documentation page.](https://developer.elgato.com/documentation/stream-deck/sdk/exporting-your-plugin/) Because Elgato does not offer any sort of versioning, there is no way to download previous versions of the tool, and as such there are no options available for this package.
+
+## Usage
+
+### CLI
+
+On both platforms, the following commands will take the plugin assets located in `com.elgato.counter.sdPlugin` and output them to a directory called `Release` in the project root directory. 
+
+**NOTE:** The plugin assets must be located in a directory named in the format of `<TLD>.<DEVELOPER>.<PLUGINNAME>.sdPlugin`. The distribution tool will not accept a plugin directory not named in this format.
+
+**NOTE:** The `Release` directory must exist. The distribution tool executable will not create one if it does not.
+
+On Windows:
+
+```
+.\node_modules\sd-distribution-tool -b -i com.elgato.counter.sdPlugin -o Release
+```
+
+On macOS:
+
+```
+./node_modules/sd-distribution-tool -b -i com.elgato.counter.sdPlugin -o Release
+```
+
+### API 
+
+```js
+const { execFile } = require("child_process");
+const DistributionTool = require("stream-deck-distribution-tool");
+
+execFile(DistributionTool, ["-v"], (err, stdout) => {
+    if (err) 
+        throw err;
+    
+    console.log(stdout);
+})
+```
+
+## Inspiration
+
+* [fenneclab/hugo-bin](https://github.com/fenneclab/hugo-bin)
+
+## License
+
+MIT © TheAppleFreak

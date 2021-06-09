@@ -1,0 +1,46 @@
+{
+  "name": "stream-deck-distribution-tool",
+  "version": "1.0.0",
+  "description": "Binary wrapper that makes the Elgato Stream Deck Distribution Tool seamlessly available as a local dependency.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "rimraf vendor && node lib/install",
+    "test": "mocha"
+  },
+  "bin": {
+    "sd-distribution-tool": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheAppleFreak/stream-deck-distribution-tool.git"
+  },
+  "keywords": [
+    "stream deck",
+    "streamdeck",
+    "elgato"
+  ],
+  "author": "TheAppleFreak <TheAppleFreak@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheAppleFreak/stream-deck-distribution-tool/issues"
+  },
+  "homepage": "https://github.com/TheAppleFreak/stream-deck-distribution-tool#readme",
+  "os": [
+    "win32",
+    "darwin"
+  ],
+  "files": [
+    "lib/*.js",
+    "cli.js",
+    "index.js"
+  ],
+  "dependencies": {
+    "bin-wrapper": "^4.1.0",
+    "rimraf": "^3.0.2",
+    "signale": "^1.4.0"
+  },
+  "devDependencies": {
+    "bin-check": "^4.1.0",
+    "mocha": "^9.0.0"
+  }
+}
