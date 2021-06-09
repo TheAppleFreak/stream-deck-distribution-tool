@@ -32,8 +32,10 @@
   "files": [
     "lib/*.js",
     "cli.js",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
+  "typings": "index.d.ts",
   "dependencies": {
     "bin-wrapper": "^4.1.0",
     "rimraf": "^3.0.2",
