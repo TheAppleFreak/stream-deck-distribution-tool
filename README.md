@@ -14,13 +14,23 @@ Upon installation, this package will download the latest version of the distribu
 
 ## Usage
 
-### CLI
-
-On both platforms, the following commands will take the plugin assets located in `com.elgato.counter.sdPlugin` and output them to a directory called `Release` in the project root directory. 
+On both Windows and macOS, the following commands (when run in the project root directory) will take the plugin assets located in `com.elgato.counter.sdPlugin` and output them to a directory called `Release`. 
 
 **NOTE:** The plugin assets must be located in a directory named in the format of `<TLD>.<DEVELOPER>.<PLUGINNAME>.sdPlugin`. The distribution tool will not accept a plugin directory not named in this format.
 
 **NOTE:** The `Release` directory must exist. The distribution tool executable will not create one if it does not.
+
+### Node scripts
+
+```json
+{
+    "scripts": {
+        "build": "sd-distribution-tool -b -i com.elgato.counter.sdPlugin -o Release"
+    }
+}
+```
+
+### CLI
 
 On Windows:
 
@@ -40,7 +50,7 @@ On macOS:
 const { execFile } = require("child_process");
 const DistributionTool = require("stream-deck-distribution-tool");
 
-execFile(DistributionTool, ["-v"], (err, stdout) => {
+execFile(DistributionTool, ["-b", "-i" "com.elgato.counter.sdPlugin", "-o", "Release"], (err, stdout) => {
     if (err) 
         throw err;
     
