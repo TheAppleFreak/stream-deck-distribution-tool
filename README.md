@@ -10,7 +10,7 @@ Binary wrapper that makes the Elgato Stream Deck Distribution Tool seamlessly av
 npm install -D stream-deck-distribution-tool
 ```
 
-Upon installation, this package will download the latest version of the distribution tool from [the Elgato Stream Deck API documentation page.](https://developer.elgato.com/documentation/stream-deck/sdk/exporting-your-plugin/) Because Elgato does not offer any sort of versioning, there is no way to download previous versions of the tool, and as such there are no options available for this package.
+Upon installation, this package will download the latest version of the distribution tool from [the Elgato Stream Deck API documentation page.](https://developer.elgato.com/documentation/stream-deck/sdk/packaging/) Because Elgato does not offer any sort of versioning, there is no way to download previous versions of the tool, and as such there are no options available for this package.
 
 ## Usage
 
