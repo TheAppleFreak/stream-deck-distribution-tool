@@ -1,6 +1,6 @@
 {
   "name": "stream-deck-distribution-tool",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Binary wrapper that makes the Elgato Stream Deck Distribution Tool seamlessly available as a local dependency.",
   "main": "index.js",
   "scripts": {
