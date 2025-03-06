@@ -4,6 +4,9 @@
 
 Binary wrapper that makes the Elgato Stream Deck Distribution Tool seamlessly available as a local dependency.
 
+> [!CAUTION]
+> [Ever since the release of the official Stream Deck SDK](https://docs.elgato.com/streamdeck/sdk/introduction/getting-started), this package is no longer needed and has accordingly been archived and deprecated. This code is available for historical purposes, but should not be used.
+
 ## Install 
 
 ```
